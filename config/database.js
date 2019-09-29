@@ -16,7 +16,7 @@ module.exports = {
   | interacting with SQL databases.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'sqlite'),
+  connection: Env.get('DB_CONNECTION', 'mysql'),
 
   /*
   |--------------------------------------------------------------------------
@@ -52,10 +52,10 @@ module.exports = {
     client: 'mysql',
     connection: {
       host: Env.get('DB_HOST', 'localhost'),
-      port: Env.get('DB_PORT', ''),
+      port: Env.get('DB_PORT', '3306'),
       user: Env.get('DB_USER', 'root'),
       password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
+      database: Env.get('DB_DATABASE', 'jegues_dev')
     },
     debug: Env.get('DB_DEBUG', false)
   },
@@ -73,11 +73,11 @@ module.exports = {
   pg: {
     client: 'pg',
     connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      port: Env.get('DB_PORT', ''),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
+      host: Env.get('DB_HOST', '0.0.0.0'),
+      port: Env.get('DB_PORT', '5432'),
+      user: Env.get('DB_USER', 'jegues'),
+      password: Env.get('DB_PASSWORD', 'jegues'),
+      database: Env.get('DB_DATABASE', 'JEGUES_DEV')
     },
     debug: Env.get('DB_DEBUG', false)
   }

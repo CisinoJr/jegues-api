@@ -7,7 +7,7 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
-  static boot () {
+  static boot() {
     super.boot()
 
     /**
@@ -31,9 +31,22 @@ class User extends Model {
    *
    * @return {Object}
    */
-  tokens () {
+  tokens() {
     return this.hasMany('App/Models/Token')
   }
+
+  /**
+   * A relationship on Family, when a Family has many
+   * users and a user has only one Family.
+   *
+   * @method family
+   *
+   * @return {Object}
+   */
+  family() {
+    return this.belongsTo('App/Models/Family')
+  }
+
 }
 
 module.exports = User
